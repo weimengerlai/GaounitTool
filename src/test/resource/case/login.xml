@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcase id="login_case" desc="登录的所有的测试用例">
+
+
+
+    <!--每一条测试用例标签case-->
+    <case id="login_user_name_no_appType" desc="登陆没有设备类型,AppType长度为0" tag="login_user_name">
+
+        <!--网络请求的参数-->
+
+        <!--测试用例提交的参数 执行网络请求的标签 -->
+        <!-- service 主要就是设置网络请求的URL 请求类型 请求方法 参数-->
+        <call service="loginUserPwd">
+
+            <!--参数类型 paran-->
+            <param name="AppType"></param>
+
+        </call>
+
+        <!-- 在控制台输出标签 如果有这个标签就输出内容,没有就不输出内容,就是接口返回的数据-->
+        <print/>
+
+
+        <!-- 添加断言标签 分为结果断言 和 数据库断言 -->
+
+        <Assert>
+
+            <!-- 结果断言 -->
+            <!-- 断言状态 statue-->
+            <result statue = "0">
+
+                <JsonRsult>
+
+                    {
+                        "status":0,
+                        "message":"设备类型不能为空"
+                    }
+
+                </JsonRsult>
+
+            </result>
+
+            <!--执行SQL 数据库的sql-->
+          <!--  <SQL database="jenkins">
+
+                &lt;!&ndash;执行是sql&ndash;&gt;
+                <exe_sql>
+                    SELECT * from Login where username = 'zhangsan' and passwrod = '123456'
+                </exe_sql>
+
+                &lt;!&ndash;断言返回结果&ndash;&gt;
+                <sql_result>
+
+                    {
+                        "login_id":10000,
+                        "username":"zhangsan"
+                    }
+
+                </sql_result>
+
+            </SQL>-->
+
+
+        </Assert>
+
+
+
+    </case>
+
+
+    <!-- 设备类型没有的-->
+    <case id="login_user_name_no_appType_null" desc="登陆没有设备类型,AppType关键字不上传" tag="login_user_name">
+
+        <!--网络请求的参数-->
+
+        <!--测试用例提交的参数 执行网络请求的标签 -->
+        <!-- service 主要就是设置网络请求的URL 请求类型 请求方法 参数-->
+        <call service="loginUserPwd">
+
+        </call>
+
+        <!-- 在控制台输出标签 如果有这个标签就输出内容,没有就不输出内容,就是接口返回的数据-->
+        <print/>
+
+
+        <!-- 添加断言标签 分为结果断言 和 数据库断言 -->
+
+        <Assert>
+
+            <!-- 结果断言 -->
+            <!-- 断言状态 statue-->
+            <result statue = "0">
+
+                <JsonRsult>
+
+                    {
+                    "status":0,
+                    "message":"设备类型不能为空"
+                    }
+
+                </JsonRsult>
+
+            </result>
+
+            <!--执行SQL 数据库的sql-->
+            <!--  <SQL database="jenkins">
+
+                  &lt;!&ndash;执行是sql&ndash;&gt;
+                  <exe_sql>
+                      SELECT * from Login where username = 'zhangsan' and passwrod = '123456'
+                  </exe_sql>
+
+                  &lt;!&ndash;断言返回结果&ndash;&gt;
+                  <sql_result>
+
+                      {
+                          "login_id":10000,
+                          "username":"zhangsan"
+                      }
+
+                  </sql_result>
+
+              </SQL>-->
+
+
+        </Assert>
+
+
+
+    </case>
+
+
+
+</testcase>
