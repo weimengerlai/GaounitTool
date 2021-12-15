@@ -9,8 +9,8 @@ import org.junit.runner.Description;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runners.ParentRunner;
 import org.junit.runners.model.InitializationError;
+import org.springframework.context.ApplicationContext;
 import org.xml.sax.SAXException;
-
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -33,6 +33,8 @@ public class Gunit extends ParentRunner<TestSuitRunner> {
     private List<Service> serviceList = new ArrayList<>();
     // 声明map集合
     private Map<String,Service> serviceMap = new HashMap<>();
+    // 获取应用上下文，加载xml
+    private ApplicationContext context;
 
 
     /**
@@ -49,38 +51,106 @@ public class Gunit extends ParentRunner<TestSuitRunner> {
         // 调用解析 Host
         getServiceFile();
 
-        // 使用for循环 执行测试用例
-        for (int i=0; i< testCaseList.size(); i++){
-
-            // 实例化 对象 TestSuitRunner
-            TestSuitRunner testSuitRunner = new TestSuitRunner(testClass,testCaseList.get(i),serviceMap);
-            // 加入到列表里面
-            testSuitRunnerList.add(testSuitRunner);
-
-        }
-
-
         // 获取 id 和tag的值
         InterceptorClasses interceptorClasses = testClass.getAnnotation(InterceptorClasses.class);
 
         // 获取注解的内容
         String[] ids = interceptorClasses.ids();
         // 获取tag值
-        String[] tags = interceptorClasses.tag();
+        String[] tags = interceptorClasses.tags();
 
-        for (String id : ids){
+        // 首选如果id不为空执行id,如果id为空tag不为空，执行tag,如果id和tag都为空，执行全量
+        if(ids[0] != null && ids[0].length() > 0){
+            // 执行id
+            for (int i=0; i< testCaseList.size(); i++){
+                for (String id : ids){
+                    if(id.equals(testCaseList.get(i).getId())){
+                        // 实例化 对象 TestSuitRunner
+                        TestSuitRunner testSuitRunner = new TestSuitRunner(testClass,testCaseList.get(i),serviceMap);
+                        // 加入到列表里面
+                        testSuitRunnerList.add(testSuitRunner);
+                    }
+                }
+            }
 
-            System.out.println("当前需要运行的测试用例:"+id);
         }
 
-        for (String tag : tags){
-
-            System.out.println("当前需要运行的测试用例是:tag"+tag);
+        if((ids[0] == null || ids[0].length() == 0) && (tags[0] != null && tags[0].length() > 0)){
+            // 执行tag
+            for (int i=0; i< testCaseList.size(); i++){
+                for (String tag : tags){
+                    if(tag.equals(testCaseList.get(i).getTag())){
+                        // 实例化 对象 TestSuitRunner
+                        TestSuitRunner testSuitRunner = new TestSuitRunner(testClass,testCaseList.get(i),serviceMap);
+                        // 加入到列表里面
+                        testSuitRunnerList.add(testSuitRunner);
+                    }
+                }
+            }
         }
+
+        if((ids[0] == null || ids[0].length() == 0 ) && (tags[0] == null || tags[0].length() == 0)){
+            // 执行全量
+            // 使用for循环 执行测试用例
+            for (int i=0; i< testCaseList.size(); i++){
+
+                // 实例化 对象 TestSuitRunner
+                TestSuitRunner testSuitRunner = new TestSuitRunner(testClass,testCaseList.get(i),serviceMap);
+                // 加入到列表里面
+                testSuitRunnerList.add(testSuitRunner);
+
+            }
+        }
+        System.out.println("当前需要运行的测试用例:"+ids.length +"====="+tags.length);
+
+//        for (String id : ids){
+//
+//            System.out.println("当前需要运行的测试用例:"+id);
+//        }
+//
+//        for (String tag : tags){
+//
+//            System.out.println("当前需要运行的测试用例是:tag"+tag);
+//        }
 
 
         // 测试用例运行的总体逻辑是如果有 id 就运行 id,如果没有id就运行Tag,如果没有tag,就运行全部测试用例
 
+        // 获取放置数据库配置文件路径path
+        String path = getClass().getClassLoader().getResource("config").getPath();
+//        // 加载数据库配置文件
+//        // /Users/gaoxuejun/Desktop/Desktop/java_tool_develop/GunitTool/src/test/resource/config/spring/spring-mybatis.xml
+//        context = new ClassPathXmlApplicationContext(path+"/spring-mybatis.xml");
+//        // 获取bean对象
+//        LoginMapperDao loginMapperDao = (LoginMapperDao) context.getBean("LoginMapperDao");
+
+//
+//        if(null == loginMapperDao){
+//
+//            System.out.println("对象不为空");
+//        }
+
+
+//        try {
+//            //使用MyBatis提供的Resources类加载mybatis的配置文件
+//            Reader reader = Resources.getResourceAsReader(path+"/spring/spring-mybatis.xml");
+//            //构建sqlSession的工厂
+//            SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(reader);
+//
+//            SqlSession session= sessionFactory.openSession();
+//
+//            LoginMapperDao mapper=session.getMapper(LoginMapperDao.class);
+//
+//            Map<String,String> map = mapper.findLoginByName(" select * from qiezzi_login where username=='ASasd123' ");
+//
+//            System.out.println("当前的长度是："+map.size());
+////            User user= mapper.GetUserByID(1);
+////            System.out.println(user.toString());
+//
+//            session.commit();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
 
 
@@ -171,7 +241,6 @@ public class Gunit extends ParentRunner<TestSuitRunner> {
                 serviceMap.put(service.getId(),service);
             }
 
-
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         } catch (SAXException e) {
@@ -184,7 +253,6 @@ public class Gunit extends ParentRunner<TestSuitRunner> {
 
     // 封装xml解析方法
     public void saxXml(String path){
-
         // 解析数据
         //创建解析工厂
         SAXParserFactory factory = SAXParserFactory.newInstance();
@@ -212,7 +280,5 @@ public class Gunit extends ParentRunner<TestSuitRunner> {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 }

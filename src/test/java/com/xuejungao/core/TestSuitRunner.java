@@ -64,8 +64,6 @@ public class TestSuitRunner extends BlockJUnit4ClassRunner {
             e.printStackTrace();
         }
 
-
-
         return testCaseStatement;
     }
 
@@ -74,7 +72,6 @@ public class TestSuitRunner extends BlockJUnit4ClassRunner {
     // 决定我们测试用例叫什么名字
     @Override
     protected String testName(FrameworkMethod method) {
-
 
         // 修噶测试用例名字
         return testCase.getId();

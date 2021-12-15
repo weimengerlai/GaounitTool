@@ -18,7 +18,7 @@ public @interface InterceptorClasses {
     String[]  ids() default "";
 
     // 需要运行的tag数组
-    String[] tag() default "";
+    String[] tags() default "";
 
 
 

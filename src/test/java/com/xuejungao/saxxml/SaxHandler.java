@@ -1,11 +1,7 @@
 package com.xuejungao.saxxml;
 
 
-import com.xuejungao.entity.Assert;
-import com.xuejungao.entity.Call;
-import com.xuejungao.entity.Result;
-import com.xuejungao.entity.SQL;
-import com.xuejungao.entity.TestCase;
+import com.xuejungao.entity.*;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -34,9 +30,14 @@ public class SaxHandler extends DefaultHandler {
     private Result result;
     // SQL 语句期望值
     private SQL sql;
+    // mock 地址
+    private MockResult mMockResult;
     // 定义 类型用来在有换行特殊情况进行判断
     private String name;
+    // 期望返回的结果
     private String JsonRsult="";
+    // 需要mock的结果
+    private String mockResult = "";
 
     // 定义列表
     private List<TestCase> testCaseList = new ArrayList<TestCase>();
@@ -161,7 +162,6 @@ public class SaxHandler extends DefaultHandler {
 
             }
         }
-
         // SQL
         if(qName.equals("SQL")){
 
@@ -180,14 +180,32 @@ public class SaxHandler extends DefaultHandler {
             }
 
         }
+        // MockResult
+        if(qName.equals("MockResult")){
+            // 实例化对象
+            mMockResult = new MockResult();
+            // 获取属性
+            int number = attributes.getLength();
 
+            for (int i=0;i<number;i++){
 
+                if(attributes.getQName(i).equals("mockUrl")){
+                    // 获取url 值设置
+                    mMockResult.setMockUrl(attributes.getValue(i));
+
+                }
+            }
+        }
         // 开始每一条测试用例之前将我们以前的期望值设置为""
         if(qName.equals("JsonRsult")){
 
             JsonRsult = "";
         }
+        // 开始每一条测试用例之前将我们以前的期望值设置为""
+        if(qName.equals("MockResult")){
 
+            mockResult = "";
+        }
     }
 
 
@@ -236,6 +254,15 @@ public class SaxHandler extends DefaultHandler {
             result.setJsonRsult(str2);
         }
 
+        // MockResult
+        if(qName.equals("MockResult")){
+
+            String str1 = mockResult.replaceAll(" ", "");
+            String str2 = str1.replaceAll("\r\n|\r|\n", "");
+            // 设置属性
+            mMockResult.setMockResult(str2);
+        }
+
 
         // exe_sql
         if(qName.equals("exe_sql")){
@@ -250,15 +277,17 @@ public class SaxHandler extends DefaultHandler {
         }
 
         // SQL
-        if(qName.equals("Assert")){
+        if(qName.equals("SQL")){
 
             anAssert.setSql(sql);
         }
 
         // result
         if(qName.equals("result")){
-
+            // 设置期望返回数据对象
             anAssert.setmResult(result);
+            // 设置mock对象数据
+            anAssert.setmMockResult(mMockResult);
         }
 
         // Assert
@@ -272,14 +301,13 @@ public class SaxHandler extends DefaultHandler {
 
             testCase.setCall(call);
         }
+
         // case
         if(qName.equals("case")){
 
             // 加入到列表里面
             testCaseList.add(testCase);
         }
-
-
     }
 
 
@@ -298,7 +326,10 @@ public class SaxHandler extends DefaultHandler {
 
             JsonRsult += value;
         }
+        // 判断是不是 JsonRsult
+        if(name.equals("MockResult")){
 
-
+            mockResult += value;
+        }
     }
 }

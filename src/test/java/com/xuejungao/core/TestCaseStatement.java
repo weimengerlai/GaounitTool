@@ -1,12 +1,17 @@
 package com.xuejungao.core;
 
 
+import com.alibaba.dubbo.common.json.JSON;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.xuejungao.FileUtils.HttpUtils;
-import com.xuejungao.entity.Assert;
-import com.xuejungao.entity.Result;
-import com.xuejungao.entity.Service;
-import com.xuejungao.entity.TestCase;
+import com.xuejungao.entity.*;
+import org.json.JSONObject;
 import org.junit.runners.model.Statement;
+import org.mockito.Mockito;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -85,6 +90,21 @@ public class TestCaseStatement extends Statement {
 
         String method = service.getMethod();
 
+        if(testCase.getAnAssert() != null){
+            // 请求之前首先mock
+            MockResult mMockResult = testCase.getAnAssert().getmMockResult();
+            // 执行mock
+            RestTemplate restTemplate=new RestTemplate();
+            // 转为json对象
+            String mckresult = mMockResult.getMockResult();
+            // url
+            String mockUrl = mMockResult.getMockUrl();
+            // 加入urr 和数据
+            map.put("mockJson",mckresult);
+            map.put("mockUrl",mockUrl);
+        }
+
+
         // 打印请求参数
         System.out.println(testCase.getId()+"请求的URL是:"+service.getUrl());
         System.out.println(testCase.getId()+"请求的参数是:"+map.toString());
@@ -120,7 +140,6 @@ public class TestCaseStatement extends Statement {
             return;
         }
 
-
         // 获取内容进行断言
         // 判断连个json 是不是一样
         if(json.equals(mResult.getJsonRsult())){
@@ -135,10 +154,6 @@ public class TestCaseStatement extends Statement {
             // 如果期望值 和 返回值不想通设置为 false
             assert false;
         }
-
-
-
-
     }
 
 }

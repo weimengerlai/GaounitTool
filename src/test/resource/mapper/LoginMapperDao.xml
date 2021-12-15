@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 设置为IUserDao接口方法提供sql语句配置 -->
+<mapper namespace="com.xuejungao.dao.LoginMapperDao">
+
+
+
+    <!--查询语句-->
+    <!-- id 就是我们的在接口里面声明的方法 findLoginByName-->
+    <!-- resultType 返回类型就是我们需要返回的实体类 Login -->
+    <!-- where 后面的参数 username 和 password 就是我们在 findLoginByName(String username,String password); 里面的参数-->
+
+
+    <select id="findLoginByName" resultType="Map">
+
+       #{exesql}
+
+
+    </select>
+
+
+</mapper>
