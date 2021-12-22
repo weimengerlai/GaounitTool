@@ -6,6 +6,7 @@
     <!-- DUBBO 接口类型 -->
     <HTTP id="loginUserPwd"
           method = "POST"
+          type = "http"
           url="http://127.0.0.1:8080/user/login"
           desc="登陆接口路径"/>
 
