@@ -6,7 +6,16 @@ public class Service {
     private String method;
     private String url;
     private String desc;
+    // 请求类型
+    private String type;
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public String getId() {
         return id;

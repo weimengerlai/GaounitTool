@@ -259,6 +259,20 @@
           <artifactId>spring-boot-starter-web</artifactId>
       </dependency>
 
+      <!-- nettty 请求dubbo -->
+      <dependency>
+          <groupId>io.netty</groupId>
+          <artifactId>netty-all</artifactId>
+          <version>4.1.20.Final</version>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
+      <dependency>
+          <groupId>commons-net</groupId>
+          <artifactId>commons-net</artifactId>
+          <version>3.6</version>
+      </dependency>
+
   </dependencies>
 
 

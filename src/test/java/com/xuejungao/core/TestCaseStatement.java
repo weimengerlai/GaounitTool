@@ -5,6 +5,7 @@ import com.alibaba.dubbo.common.json.JSON;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.xuejungao.FileUtils.DubboUtils;
 import com.xuejungao.FileUtils.HttpUtils;
 import com.xuejungao.entity.*;
 import org.json.JSONObject;
@@ -113,6 +114,18 @@ public class TestCaseStatement extends Statement {
         // 调用封装的网络请求
         String json = HttpUtils.HttpFramework(url,map,method);
 
+        DubboModel mDubboModel = new DubboModel();
+        mDubboModel.setHostIp("192.168.229.44");
+        mDubboModel.setPort(20880);
+        mDubboModel.setServiceName("con.gaoxuejun.login.LoginDubbo");
+        mDubboModel.setMethodName("findByNamePwd");
+        // invoke con.gaoxuejun.login.LoginDubbo.findByNamePwd("zhangsan","123456")
+        mDubboModel.setRequestJson("\"zhangsan\",\"123456\"");
+
+        String resulttt = DubboUtils.send(mDubboModel);
+
+        System.out.println(testCase.getId()+"dunbo返回值:"+resulttt);
+
         // 打印返回结果
         System.out.println(testCase.getId()+"服务器返回的结果是:"+json);
 
@@ -155,5 +168,4 @@ public class TestCaseStatement extends Statement {
             assert false;
         }
     }
-
 }
