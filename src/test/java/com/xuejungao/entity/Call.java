@@ -1,11 +1,11 @@
 package com.xuejungao.entity;
 
-import java.util.Map;
+import java.util.LinkedHashMap;
 
 public class Call {
 
     private String service;
-    private Map<String,String> map;
+    private LinkedHashMap<String,String> map;
 
 
     public String getService() {
@@ -16,14 +16,11 @@ public class Call {
         this.service = service;
     }
 
-    public Map<String, String> getMap() {
+    public LinkedHashMap<String, String> getMap() {
         return map;
     }
 
-    public void setMap(Map<String, String> map) {
+    public void setMap(LinkedHashMap<String, String> map) {
         this.map = map;
     }
-
-
-
 }

@@ -24,8 +24,8 @@
     <HTTP id="loginDubboUserPwd"
           method = "findByNamePwd"
           type = "dubbo"
-          dunboPort = "2018"
-          dunboIp="127.0.0.1"
+          dunboPort = "20880"
+          dunboIp="192.168.229.44"
           dubboPackage = "con.gaoxuejun.login.LoginDubbo"
           paramType = "String"
           desc="登录的dubbo接口"/>

@@ -6,10 +6,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class SaxHandler extends DefaultHandler {
 
@@ -21,7 +18,7 @@ public class SaxHandler extends DefaultHandler {
     // 定义vales
     private String value = "";
     // 定义map集合用来接收参数
-    private Map<String,String> map = new HashMap<>();
+    private LinkedHashMap<String,String> map = new LinkedHashMap<>();
     // 定义map的key变量
     private String mapRequestKey= "";
     // 定义成员对象
@@ -100,7 +97,7 @@ public class SaxHandler extends DefaultHandler {
             // 实例化对象
             call = new Call();
             // 参数全部遍历完成,我们需要将map设置为空,因为下一条测试用例也有参数,不能带有上一条测试用例的参数
-            map = new HashMap<>();
+            map = new LinkedHashMap<>();
 
 
             // 获取属性
@@ -222,6 +219,7 @@ public class SaxHandler extends DefaultHandler {
 
             // 加入值
             map.put(mapRequestKey,str2);
+            System.out.print("当前自动化工具请求的参数:"+mapRequestKey+"=="+str2);
 
         }
 

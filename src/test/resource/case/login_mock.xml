@@ -87,14 +87,9 @@
             <result statue = "0">
                 <JsonRsult>
                     {
-                    "mockJson":null,
-                    "mockUrl":null,
-                    "uid":null,
-                    "username":"zhangsan",
-                    "password":"123456",
-                    "realName":null,
-                    "message":"mock第三方数据成功基本上",
-                    "userId":"10000","stasus":0
+                        "password":"123456",
+                        "userId":10000,
+                        "username":"zhangsan"
                     }
                 </JsonRsult>
                 <!--&lt;!&ndash; modk 掉第三方请求 &ndash;&gt;-->

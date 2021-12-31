@@ -16,10 +16,7 @@ import org.mockito.Mockito;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class TestCaseStatement extends Statement {
 
@@ -89,7 +86,7 @@ public class TestCaseStatement extends Statement {
 
         String url = service.getUrl();
 
-        Map<String,String> map = testCase.getCall().getMap();
+        LinkedHashMap<String,String> map = testCase.getCall().getMap();
 
         String method = service.getMethod();
 
@@ -134,6 +131,9 @@ public class TestCaseStatement extends Statement {
             if(service.getParamType().equals(DubboParamEnum.STRING_PARAMS.getValue())){
                 // 计算当前位置
                 int position = 0;
+                // 移除mock
+                map.remove("mockUrl");
+                map.remove("mockJson");
                 // 遍历请求参数
                 for (Map.Entry<String, String> entry : map.entrySet()) {
                     if(position < map.size() -1){

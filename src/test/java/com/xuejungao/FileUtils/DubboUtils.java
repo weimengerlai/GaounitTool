@@ -107,7 +107,7 @@ public class DubboUtils {
             // 断开链接
             telnetClient.disconnect();
             // 获取值
-            String ret = sb.toString();
+            String ret = sb.toString().trim();
             // 转义符
             String lineSeparator = System.getProperty("line.separator", "\n");
             if (StringUtils.isNotEmpty(ret)) {
