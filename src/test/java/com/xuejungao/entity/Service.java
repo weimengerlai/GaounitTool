@@ -2,12 +2,56 @@ package com.xuejungao.entity;
 
 public class Service {
 
+    // 请求id
     private String id;
+    // 请求方法
     private String method;
+    // 请求url
     private String url;
+    // 描述
     private String desc;
     // 请求类型
     private String type;
+    // dubbo 接口请求的io
+    private String dunboIp;
+    // dubbo 请求的端口号
+    private String dunboPort;
+    // dubbo 请求的包名
+    private String dubboPackage;
+    // dubbo 请求的参数类型
+    private String paramType;
+
+    public String getParamType() {
+        return paramType;
+    }
+
+    public void setParamType(String paramType) {
+        this.paramType = paramType;
+    }
+
+    public String getDubboPackage() {
+        return dubboPackage;
+    }
+
+    public void setDubboPackage(String dubboPackage) {
+        this.dubboPackage = dubboPackage;
+    }
+
+    public String getDunboPort() {
+        return dunboPort;
+    }
+
+    public void setDunboPort(String dunboPort) {
+        this.dunboPort = dunboPort;
+    }
+
+    public String getDunboIp() {
+        return dunboIp;
+    }
+
+    public void setDunboIp(String dunboIp) {
+        this.dunboIp = dunboIp;
+    }
 
     public String getType() {
         return type;

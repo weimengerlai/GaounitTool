@@ -10,4 +10,24 @@
           url="http://127.0.0.1:8080/user/login"
           desc="登陆接口路径"/>
 
+
+    <!-- DUBBO 接口类型 -->
+    <!--
+        id : 唯一之别
+        method : 请求方法
+        type : 类型 dubbo 或者http
+        port : dubbo 请求的时候的端口号
+        url  : dubbo 请求的时候的ip 或者http请求的路径
+        package : dubbo 请求的时候的包名 con.gaoxuejun.login.LoginDubbo
+        paramType : dubbo 请求的的时候参数类型 Sting 类似 或者Json类型
+    -->
+    <HTTP id="loginDubboUserPwd"
+          method = "findByNamePwd"
+          type = "dubbo"
+          dunboPort = "2018"
+          dunboIp="127.0.0.1"
+          dubboPackage = "con.gaoxuejun.login.LoginDubbo"
+          paramType = "String"
+          desc="登录的dubbo接口"/>
+
 </services>

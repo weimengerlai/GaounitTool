@@ -73,6 +73,26 @@ public class SaxHostHandler extends DefaultHandler {
                     // 获取值,进行设置
                     mService.setDesc(attributes.getValue(i));
                 }
+                if(attributes.getQName(i).equals("dunboPort")){
+
+                    // 获取值,进行设置
+                    mService.setDunboPort(attributes.getValue(i));
+                }
+                if(attributes.getQName(i).equals("dunboIp")){
+
+                    // 获取值,进行设置
+                    mService.setDunboIp(attributes.getValue(i));
+                }
+                if(attributes.getQName(i).equals("dubboPackage")){
+
+                    // 获取值,进行设置
+                    mService.setDubboPackage(attributes.getValue(i));
+                }
+                if(attributes.getQName(i).equals("paramType")){
+
+                    // 获取值,进行设置
+                    mService.setParamType(attributes.getValue(i));
+                }
             }
         }
     }
