@@ -115,7 +115,9 @@ public class DubboUtils {
             }
             // 打印日志
             System.out.println("receive: {}" + ret);
-            return ret;
+            result = ret.replaceAll(" ", "");
+            String str2 = result.replaceAll("\r\n|\r|\n", "");
+            return str2;
 //            // 转为json
 //            result = JSON.toJSONString(JSON.parse(ret), new SerializerFeature[]{SerializerFeature.PrettyFormat, SerializerFeature.WriteMapNullValue, SerializerFeature.WriteDateUseDateFormat});
 //            return result;
