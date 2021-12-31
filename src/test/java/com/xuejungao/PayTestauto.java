@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
 @RunWith(Gunit.class)
 // 注解进去我们自己定义的注解,执行我们自己希望在测试用例执行之前执行的方法
 @InterceptorClasses(value = {Interceptorimpl.class}
-            , ids = {"login_user_name_mock"}
+            , ids = {"login_dubbo_user_name"}
 //        ,tags = {"login_user_name"}
 
         )

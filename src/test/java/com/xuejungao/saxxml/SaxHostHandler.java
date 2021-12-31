@@ -93,6 +93,11 @@ public class SaxHostHandler extends DefaultHandler {
                     // 获取值,进行设置
                     mService.setParamType(attributes.getValue(i));
                 }
+                if(attributes.getQName(i).equals("type")){
+
+                    // 获取值,进行设置
+                    mService.setType(attributes.getValue(i));
+                }
             }
         }
     }
