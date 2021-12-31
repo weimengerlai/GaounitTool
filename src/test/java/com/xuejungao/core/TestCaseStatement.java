@@ -5,7 +5,9 @@ import com.alibaba.dubbo.common.json.JSON;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.xuejungao.FileUtils.DubboParamEnum;
 import com.xuejungao.FileUtils.DubboUtils;
+import com.xuejungao.FileUtils.HttpOrDubboEnun;
 import com.xuejungao.FileUtils.HttpUtils;
 import com.xuejungao.entity.*;
 import org.json.JSONObject;
@@ -111,24 +113,56 @@ public class TestCaseStatement extends Statement {
         System.out.println(testCase.getId()+"请求的参数是:"+map.toString());
         System.out.println(testCase.getId()+"请求的方法是:"+service.getMethod());
 
-        // 调用封装的网络请求
-        String json = HttpUtils.HttpFramework(url,map,method);
+        // 接口请求返回的数据
+        String json = "";
+        // 判断当前是http接口 还是dubbo接口
+        if(service.getType().equals(HttpOrDubboEnun.HTTP_TYPE.getValue())){
+            // 调用封装的网络请求
+            json = HttpUtils.HttpFramework(url,map,method);
+        }
 
-        DubboModel mDubboModel = new DubboModel();
-        mDubboModel.setHostIp("192.168.229.44");
-        mDubboModel.setPort(20880);
-        mDubboModel.setServiceName("con.gaoxuejun.login.LoginDubbo");
-        mDubboModel.setMethodName("findByNamePwd");
-        // invoke con.gaoxuejun.login.LoginDubbo.findByNamePwd("zhangsan","123456")
-        mDubboModel.setRequestJson("\"zhangsan\",\"123456\"");
-
-        String resulttt = DubboUtils.send(mDubboModel);
-
-        System.out.println(testCase.getId()+"dunbo返回值:"+resulttt);
+        if(service.getType().equals(HttpOrDubboEnun.DUBBO_TYPE.getValue())){
+            // 实例化对象
+            DubboModel mDubboModel = new DubboModel();
+            mDubboModel.setHostIp(service.getDunboIp());
+            mDubboModel.setPort(Integer.valueOf(service.getDunboPort()));
+            mDubboModel.setServiceName(service.getDubboPackage());
+            mDubboModel.setMethodName(service.getMethod());
+            // invoke con.gaoxuejun.login.LoginDubbo.findByNamePwd("zhangsan","123456")
+            String params = "";
+            // 判断当前的参数是String类型还是Json
+            if(service.getParamType().equals(DubboParamEnum.STRING_PARAMS.getValue())){
+                // 计算当前位置
+                int position = 0;
+                // 遍历请求参数
+                for (Map.Entry<String, String> entry : map.entrySet()) {
+                    if(position < map.size() -1){
+                        params += "\"" + entry.getValue() + "\",";
+                    }else {
+                        params += "\"" + entry.getValue() + "\"";
+                    }
+                    // 自增 1
+                    position +=1;
+                    System.out.println("key = " + entry.getKey() + ", value = " + entry.getValue());
+                }
+            }
+            // 如果是json类型
+            if(service.getParamType().equals(DubboParamEnum.JSON_PARAMS.getValue())){
+                // 转为json
+                Gson mGson = new Gson();
+                // 转为json
+                params = mGson.toJson(map);
+            }
+            // 设置请求参数
+            mDubboModel.setRequestJson(params);
+            // 执行请求
+            json = DubboUtils.send(mDubboModel);
+            // 打印请求参数
+            System.out.println(testCase.getId()+"dunbo请求参数:"+params);
+        }
 
         // 打印返回结果
         System.out.println(testCase.getId()+"服务器返回的结果是:"+json);
-
 
         // 进行断言
         // 获取 Assert 对象

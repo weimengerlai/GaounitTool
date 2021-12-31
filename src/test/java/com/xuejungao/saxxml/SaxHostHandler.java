@@ -102,7 +102,6 @@ public class SaxHostHandler extends DefaultHandler {
     public void endElement(String uri, String localName, String qName) throws SAXException {
         super.endElement(uri, localName, qName);
 
-
         // 结束遍历的时候将对象加入列表里面
         if(qName.equals("HTTP")){
 
