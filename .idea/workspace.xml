@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d0c5433f-6bbb-441e-b1df-bc7eac01db28" name="Default" comment="增加dubbo请求">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/xuejungao/FileUtils/StringUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/xuejungao/entity/DubboModel.java" afterDir="false" />
+    <list default="true" id="d0c5433f-6bbb-441e-b1df-bc7eac01db28" name="Default" comment="增加dubbo接口的请求">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/xuejungao/FileUtils/DubboUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xuejungao/FileUtils/DubboUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/xuejungao/entity/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xuejungao/entity/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/xuejungao/core/TestCaseStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/xuejungao/core/TestCaseStatement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/xuejungao/entity/Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/xuejungao/entity/Service.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -57,7 +49,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/FileUtils/DubboUtils.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="525">
@@ -69,11 +61,20 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/resource/case/login_mock.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="11" column="35" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="122" column="59" selection-start-line="122" selection-start-column="59" selection-end-line="122" selection-end-column="59" />
+            <state relative-caret-position="444">
+              <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -284,6 +285,14 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="resource" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="GunitTool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GunitTool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="case" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -296,7 +305,7 @@
     <property name="SearchEverywhereHistoryKey" value="FilterRequest&#9;PSI&#9;JAVA://org.junit.internal.requests.FilterRequest" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1640419767649" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1640844664263" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -444,7 +453,7 @@
       <workItem from="1639469602197" duration="4035000" />
       <workItem from="1639473796270" duration="1746000" />
       <workItem from="1639475719442" duration="21045000" />
-      <workItem from="1640339961400" duration="6427000" />
+      <workItem from="1640339961400" duration="8562000" />
     </task>
     <task id="LOCAL-00001" summary="提交图片，展示在主页用来进行看的">
       <created>1571800391697</created>
@@ -467,7 +476,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640167425079</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="增加dubbo接口的请求">
+      <created>1640419970900</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1640419970901</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -503,18 +519,17 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147699000" />
+    <option name="totallyTimeSpent" value="149834000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.18253969" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.18253969" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
@@ -524,7 +539,7 @@
       <window_info anchor="bottom" id="Messages" order="4" weight="0.47959185" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32959184" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" sideWeight="0.49919224" visible="true" weight="0.5214286" />
+      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49919224" weight="0.5214286" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
@@ -581,7 +596,8 @@
     <MESSAGE value="提交图片，展示在主页用来进行看的" />
     <MESSAGE value="修改数据的方式" />
     <MESSAGE value="增加dubbo请求" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加dubbo请求" />
+    <MESSAGE value="增加dubbo接口的请求" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加dubbo接口的请求" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -920,13 +936,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resource/service/service_host_url.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/core/Gunit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1500">
@@ -934,13 +943,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resource/case/login_mock.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="35" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -1020,16 +1022,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="122" column="59" selection-start-line="122" selection-start-column="59" selection-end-line="122" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/PayTestauto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1047,6 +1039,30 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resource/service/service_host_url.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resource/case/login_mock.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="35" />
         </state>
       </provider>
     </entry>
