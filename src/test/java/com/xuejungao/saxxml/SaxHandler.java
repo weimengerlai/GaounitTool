@@ -191,6 +191,16 @@ public class SaxHandler extends DefaultHandler {
                     mMockResult.setMockUrl(attributes.getValue(i));
 
                 }
+                if(attributes.getQName(i).equals("mockMethod")){
+                    // 获取url 值设置
+                    mMockResult.setMockMethod(attributes.getValue(i));
+
+                }
+                if(attributes.getQName(i).equals("mockEntity")){
+                    // 获取url 值设置
+                    mMockResult.setMockEntity(attributes.getValue(i));
+
+                }
             }
         }
         // 开始每一条测试用例之前将我们以前的期望值设置为""

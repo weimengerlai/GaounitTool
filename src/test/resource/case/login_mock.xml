@@ -92,16 +92,17 @@
                         "username":"zhangsan"
                     }
                 </JsonRsult>
-                <!--&lt;!&ndash; modk 掉第三方请求 &ndash;&gt;-->
-                <!--<MockResult mockUrl = "http://127.0.0.1:8088/qiezziLogin_war/user/login1" >-->
-
-                    <!--{-->
-                        <!--"stasus":0,-->
-                        <!--"username":"zhangsan",-->
-                        <!--"message":"mock第三方数据成功基本上",-->
-                        <!--"userId":10000-->
-                    <!--}-->
-                <!--</MockResult>-->
+                <!-- modk 掉第三方请求 -->
+                <MockResult mockUrl = "con.gaoxuejun.login.LoginDubbo"
+                            mockMethod = "findByNamePwd"
+                            mockEntity = "con.gaoxuejun.entity.LoginSql">
+                    {
+                        "stasus":0,
+                        "username":"zhangsan",
+                        "message":"mock第三方数据成功基本上",
+                        "userId":10000
+                    }
+                </MockResult>
             </result>
 
             <!--执行SQL 数据库的sql-->

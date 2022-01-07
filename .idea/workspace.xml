@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d0c5433f-6bbb-441e-b1df-bc7eac01db28" name="Default" comment="新增氢气dubbo接口的问题">
+    <list default="true" id="d0c5433f-6bbb-441e-b1df-bc7eac01db28" name="Default" comment="新增dubbo请求的问题">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/ssmLoginApi_1_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/lib/ssmLoginApi-1.0.1.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/xuejungao/FileUtils/DubboUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xuejungao/FileUtils/DubboUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/xuejungao/entity/MockResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xuejungao/entity/MockResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/xuejungao/saxxml/SaxHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xuejungao/saxxml/SaxHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resource/case/login_mock.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resource/case/login_mock.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/xuejungao/core/TestCaseStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/xuejungao/core/TestCaseStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/xuejungao/saxxml/SaxHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/xuejungao/saxxml/SaxHandler.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -32,7 +40,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/resource/service/service_host_url.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
+            <state relative-caret-position="390">
               <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
             </state>
           </provider>
@@ -53,8 +61,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/FileUtils/DubboUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="119" column="23" selection-start-line="119" selection-start-column="23" selection-end-line="119" selection-end-column="23" />
+            <state relative-caret-position="780">
+              <caret line="52" column="29" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,8 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/resource/case/login_mock.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="91" column="45" lean-forward="true" selection-start-line="91" selection-start-column="45" selection-end-line="91" selection-end-column="45" />
+            <state relative-caret-position="1440">
+              <caret line="96" column="56" selection-start-line="96" selection-start-column="56" selection-end-line="96" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -74,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="633">
-              <caret line="191" selection-start-line="191" selection-end-line="191" />
+            <state relative-caret-position="903">
+              <caret line="170" column="80" selection-start-line="170" selection-start-column="80" selection-end-line="170" selection-end-column="80" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,15 +92,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/entity/Call.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/entity/Assert.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+            <state relative-caret-position="165">
+              <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
               <folding>
-                <element signature="e#329#330#0" expanded="true" />
-                <element signature="e#355#356#0" expanded="true" />
-                <element signature="e#406#407#0" expanded="true" />
-                <element signature="e#436#437#0" expanded="true" />
+                <element signature="e#221#222#0" expanded="true" />
+                <element signature="e#255#256#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,8 +107,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/saxxml/SaxHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="217" column="53" lean-forward="true" selection-start-line="217" selection-start-column="12" selection-end-line="217" selection-end-column="60" />
+            <state relative-caret-position="2475">
+              <caret line="170" column="39" selection-start-line="170" selection-start-column="39" selection-end-line="170" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/entity/MockResult.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -128,7 +143,6 @@
       <find>login_user_name_length0</find>
       <find>当前需要运行的测试用例</find>
       <find>System.out.println</find>
-      <find>mMockResult</find>
       <find>anAssert</find>
       <find>JsonRsult</find>
       <find>result</find>
@@ -147,6 +161,7 @@
       <find>map</find>
       <find>当前自动化</find>
       <find>当前map是</find>
+      <find>mMockResult</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -182,10 +197,8 @@
         <option value="$PROJECT_DIR$/src/test/resource/case/login.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/entity/Assert.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/core/Gunit.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/entity/MockResult.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/FileUtils/HttpUtils.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/FileUtils/StringUtil.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/entity/DubboModel.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/FileUtils/DubboParamEnum.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/entity/Service.java" />
@@ -194,18 +207,21 @@
         <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/saxxml/SaxHostHandler.java" />
         <option value="$PROJECT_DIR$/src/test/resource/service/service_host_url.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/entity/Call.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/saxxml/SaxHandler.java" />
-        <option value="$PROJECT_DIR$/src/test/resource/case/login_mock.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/FileUtils/DubboUtils.java" />
+        <option value="$PROJECT_DIR$/src/test/resource/case/login_mock.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/saxxml/SaxHandler.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/entity/MockResult.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="$PROJECT_DIR$/../../apache-maven-3.5.0" />
-        <option name="userSettingsFile" value="$PROJECT_DIR$/../../apache-maven-3.5.0/conf/settings.xml" />
+        <option name="localRepository" value="$PROJECT_DIR$/../../respository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="$PROJECT_DIR$/../../apache-maven-3.6.1/conf/settings.xml" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -240,6 +256,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -256,20 +273,20 @@
               <item name="GunitTool" type="b2602c69:ProjectViewProjectNode" />
               <item name="GunitTool" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GunitTool" type="b2602c69:ProjectViewProjectNode" />
               <item name="GunitTool" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GunitTool" type="b2602c69:ProjectViewProjectNode" />
               <item name="GunitTool" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -277,7 +294,7 @@
               <item name="GunitTool" type="b2602c69:ProjectViewProjectNode" />
               <item name="GunitTool" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="xuejungao" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -286,8 +303,30 @@
               <item name="GunitTool" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="saxxml" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GunitTool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GunitTool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GunitTool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GunitTool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="ssmLoginApi-1.0.1.jar" type="ab9368bb:PsiFileNode" />
+            </path>
+            <path>
+              <item name="GunitTool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GunitTool" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="ssmLoginApi-1.0.1.jar" type="ab9368bb:PsiFileNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GunitTool" type="b2602c69:ProjectViewProjectNode" />
@@ -300,7 +339,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -308,7 +346,7 @@
     <property name="SearchEverywhereHistoryKey" value="FilterRequest&#9;PSI&#9;JAVA://org.junit.internal.requests.FilterRequest" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1640931518903" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1641543732551" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -324,11 +362,11 @@
       <recent name="com.xuejungao.FileUtils" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/lib" />
       <recent name="$PROJECT_DIR$/src/test/java/com/xuejungao/FileUtils" />
       <recent name="$PROJECT_DIR$/src/test/resource/case" />
       <recent name="$PROJECT_DIR$/src/test/java" />
       <recent name="$PROJECT_DIR$/image-detail" />
-      <recent name="$PROJECT_DIR$/src/test/resource/config/sprng/mybatis" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -456,7 +494,10 @@
       <workItem from="1639469602197" duration="4035000" />
       <workItem from="1639473796270" duration="1746000" />
       <workItem from="1639475719442" duration="21045000" />
-      <workItem from="1640339961400" duration="15829000" />
+      <workItem from="1640339961400" duration="16121000" />
+      <workItem from="1641452278407" duration="4457000" />
+      <workItem from="1641540747599" duration="1112000" />
+      <workItem from="1641541935244" duration="1382000" />
     </task>
     <task id="LOCAL-00001" summary="提交图片，展示在主页用来进行看的">
       <created>1571800391697</created>
@@ -521,25 +562,17 @@
       <option name="project" value="LOCAL" />
       <updated>1640930887715</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="新增dubbo请求的问题">
+      <created>1640931555842</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1640931555842</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PayTestauto - 2021.12.31 at 12h 24m 28s.xml">
-      <configuration name="PayTestauto" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PayTestauto - 2021.12.31 at 12h 27m 19s.xml">
-      <configuration name="PayTestauto" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PayTestauto - 2021.12.31 at 12h 28m 40s.xml">
-      <configuration name="PayTestauto" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PayTestauto - 2021.12.31 at 14h 00m 09s.xml">
-      <configuration name="PayTestauto" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PayTestauto - 2021.12.31 at 14h 04m 27s.xml">
-      <configuration name="PayTestauto" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="PayTestauto - 2021.12.31 at 14h 05m 22s.xml">
       <configuration name="PayTestauto" configurationId="JUnit" />
     </history-entry>
@@ -555,20 +588,43 @@
     <history-entry file="PayTestauto - 2021.12.31 at 14h 17m 21s.xml">
       <configuration name="PayTestauto" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="PayTestauto - 2021.12.31 at 14h 18m 41s.xml">
+      <configuration name="PayTestauto" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PayTestauto - 2022.01.07 at 15h 17m 34s.xml">
+      <configuration name="PayTestauto" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PayTestauto - 2022.01.07 at 15h 19m 18s.xml">
+      <configuration name="PayTestauto" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PayTestauto - 2022.01.07 at 15h 25m 50s.xml">
+      <configuration name="PayTestauto" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PayTestauto - 2022.01.07 at 16h 08m 59s.xml">
+      <configuration name="PayTestauto" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157101000" />
+    <option name="totallyTimeSpent" value="164344000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.18253969" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.2857143" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
@@ -578,12 +634,12 @@
       <window_info anchor="bottom" id="Messages" order="4" weight="0.47959185" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32959184" />
-      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49919224" weight="0.5214286" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" sideWeight="0.49919224" visible="true" weight="0.5214286" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="bottom" id="Spring" order="12" />
+      <window_info anchor="bottom" id="TODO" order="11" weight="0.32959184" />
+      <window_info anchor="bottom" id="Spring" order="12" weight="0.32959184" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Java Enterprise" order="14" weight="0.32959184" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
@@ -650,20 +706,21 @@
     <MESSAGE value="新增请求" />
     <MESSAGE value="新增解析type类型" />
     <MESSAGE value="新增氢气dubbo接口的问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增氢气dubbo接口的问题" />
+    <MESSAGE value="新增dubbo请求的问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增dubbo请求的问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java</url>
-          <line>191</line>
+          <line>205</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java</url>
-          <line>194</line>
+          <line>208</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
@@ -714,23 +771,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/resource/config/spring/spring-mybatis.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="25" column="60" lean-forward="true" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
-          <folding>
-            <element signature="e#1188#1206#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../respository/junit/junit/4.11/junit-4.11-sources.jar!/org/junit/runners/ParentRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="52" column="22" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resource/jdbc.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -876,24 +916,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/entity/Assert.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resource/case/login.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/entity/MockResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -923,13 +949,6 @@
             <element signature="e#5951#5952#0" expanded="true" />
             <element signature="e#5996#5997#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="266" column="19" selection-start-line="266" selection-start-column="19" selection-end-line="266" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -996,13 +1015,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/FileUtils/DubboParamEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="33" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../../respository/org/json/json/20180813/json-20180813.jar!/org/json/JSONObject.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1010,61 +1022,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/entity/Service.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-          <folding>
-            <element signature="e#513#514#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#605#606#0" expanded="true" />
-            <element signature="e#433#434#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
-            <element signature="e#572#573#0" expanded="true" />
-            <element signature="e#376#377#0" expanded="true" />
-            <element signature="e#408#409#0" expanded="true" />
-            <element signature="e#458#459#0" expanded="true" />
-            <element signature="e#500#501#0" expanded="true" />
-            <element signature="e#323#324#0" expanded="true" />
-            <element signature="e#353#354#0" expanded="true" />
-            <element signature="e#399#400#0" expanded="true" />
-            <element signature="e#437#438#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/FileUtils/HttpOrDubboEnun.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resource/service/service_host_url.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/entity/Call.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-          <folding>
-            <element signature="e#329#330#0" expanded="true" />
-            <element signature="e#355#356#0" expanded="true" />
-            <element signature="e#406#407#0" expanded="true" />
-            <element signature="e#436#437#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resource/case/login_mock.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="91" column="45" lean-forward="true" selection-start-line="91" selection-start-column="45" selection-end-line="91" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -1088,16 +1049,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="191" selection-start-line="191" selection-end-line="191" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/saxxml/SaxHostHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
@@ -1105,17 +1056,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/saxxml/SaxHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/entity/Call.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="217" column="53" lean-forward="true" selection-start-line="217" selection-start-column="12" selection-end-line="217" selection-end-column="60" />
+        <state relative-caret-position="210">
+          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/FileUtils/DubboParamEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/entity/Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding>
+            <element signature="e#474#475#0" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../respository/con/gaoxuejun/ssmLoginApi/1.0.1/ssmLoginApi-1.0.1.pom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resource/service/service_host_url.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/FileUtils/DubboUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="119" column="23" selection-start-line="119" selection-start-column="23" selection-end-line="119" selection-end-column="23" />
+        <state relative-caret-position="780">
+          <caret line="52" column="29" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resource/case/login_mock.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="96" column="56" selection-start-line="96" selection-start-column="56" selection-end-line="96" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/entity/Assert.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding>
+            <element signature="e#221#222#0" expanded="true" />
+            <element signature="e#255#256#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/saxxml/SaxHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2475">
+          <caret line="170" column="39" selection-start-line="170" selection-start-column="39" selection-end-line="170" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/entity/MockResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/test/lib/ssmLoginApi-1.0.1.jar!/con/gaoxuejun/entity/LoginSql.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="903">
+          <caret line="170" column="80" selection-start-line="170" selection-start-column="80" selection-end-line="170" selection-end-column="80" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
