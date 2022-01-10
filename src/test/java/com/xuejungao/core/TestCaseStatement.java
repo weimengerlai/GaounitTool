@@ -5,10 +5,7 @@ import com.alibaba.dubbo.common.json.JSON;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.xuejungao.FileUtils.DubboParamEnum;
-import com.xuejungao.FileUtils.DubboUtils;
-import com.xuejungao.FileUtils.HttpOrDubboEnun;
-import com.xuejungao.FileUtils.HttpUtils;
+import com.xuejungao.FileUtils.*;
 import com.xuejungao.entity.*;
 import org.json.JSONObject;
 import org.junit.runners.model.Statement;
@@ -110,6 +107,28 @@ public class TestCaseStatement extends Statement {
         System.out.println(testCase.getId()+"请求的参数是:"+map.toString());
         System.out.println(testCase.getId()+"请求的方法是:"+service.getMethod());
 
+        if(testCase.getAnAssert().getmMockResult().getMockEntity() != null &&
+                testCase.getAnAssert().getmMockResult().getMockMethod() != null){
+            // 进行mcok数据
+            try {
+                // 解析数据转为对象
+                Gson mGson = new Gson();
+                String mockJson = testCase.getAnAssert().getmMockResult().getMockResult();
+                Class clazz = Class.forName(testCase.getAnAssert().getmMockResult().getMockEntity());
+                System.out.println(testCase.getId()+"dunbo请求参数mcok对象:"+mockJson+"====="+clazz);
+                // json转为对象
+                Object mObject = mGson.fromJson(mockJson,clazz);
+                System.out.println(testCase.getId()+"dunbo请求参数mcok对象:"+mObject);
+                // 保存的key
+                String key = testCase.getAnAssert().getmMockResult().getMockUrl()+"."+testCase.getAnAssert().getmMockResult().getMockMethod();
+                // 保存到redis
+                RedisClient.getInstance().set(mObject,key);
+            } catch (ClassNotFoundException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+
         // 接口请求返回的数据
         String json = "";
         // 判断当前是http接口 还是dubbo接口
@@ -159,20 +178,6 @@ public class TestCaseStatement extends Statement {
             json = DubboUtils.send(mDubboModel);
             // 打印请求参数
             System.out.println(testCase.getId()+"dunbo请求参数:"+params);
-            // 解析数据转为对象
-            Gson mGson = new Gson();
-            String mockJson = testCase.getAnAssert().getmMockResult().getMockResult();
-            Class clazz = null;
-            try {
-                clazz = Class.forName(testCase.getAnAssert().getmMockResult().getMockEntity());
-                System.out.println(testCase.getId()+"dunbo请求参数mcok对象:"+mockJson+"====="+clazz);
-                // json转为对象
-                Object mObject = mGson.fromJson(mockJson,clazz);
-                System.out.println(testCase.getId()+"dunbo请求参数mcok对象:"+mObject);
-            } catch (ClassNotFoundException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
         }
 
         // 打印返回结果
