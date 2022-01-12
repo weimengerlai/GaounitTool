@@ -36,4 +36,6 @@
           paramType = "String"
           desc="登录的dubbo接口"/>
 
+    <!-- 测试纯代码逻辑 执行 -->
+
 </services>

@@ -180,6 +180,12 @@ public class TestCaseStatement extends Statement {
             System.out.println(testCase.getId()+"dunbo请求参数:"+params);
         }
 
+
+        // 测试纯代码的jar 包
+        if(service.getType().equals(HttpOrDubboEnun.NATIVE_TYPE.getValue())){
+
+        }
+
         // 打印返回结果
         System.out.println(testCase.getId()+"服务器返回的结果是:"+json);
 
