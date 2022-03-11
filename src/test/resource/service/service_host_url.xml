@@ -10,6 +10,12 @@
           url="http://127.0.0.1:8080/user/login"
           desc="登陆接口路径"/>
 
+    <HTTP id="loginUserPwdHorse"
+          method = "POST"
+          type = "http"
+          url="http://127.0.0.1:8080/HorseManage/user/login"
+          desc="登陆接口路径"/>
+
     <HTTP id="loginUserPwdMockDubbo"
           method = "POST"
           type = "http"
