@@ -203,7 +203,7 @@ public class TestCaseStatement extends Statement {
 
         // 获取内容进行断言
         // 判断连个json 是不是一样
-        if(json.equals(mResult.getJsonRsult())){
+        if(json.equals(mResult.getJsonRsult()) || json.contains(mResult.getJsonRsult())){
 
             // 如果 期望值 和 返回值是相同的设置为 true
             assert true;

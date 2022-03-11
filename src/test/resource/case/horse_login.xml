@@ -21,16 +21,12 @@
             <result statue = "0">
                 <JsonRsult>
                     {
-                        "mockJson":null,
-                        "mockUrl":null,
-                        "uid":null,
-                        "username":"zhangsan",
-                        "password":"123456",
-                        "realName":null,
-                        "message":"mock第三方数据成功基本上",
-                        "userId":"10000",
-                        "stasus":0
-                    }
+                        "status":0,
+                        "message":"登录成功",
+                        "data":
+                            {
+                                "id":10000,
+                                "username":"zhangsan",
                 </JsonRsult>
                 <!-- modk 掉第三方请求 -->
                 <MockResult mockUrl = "http://127.0.0.1:8088/qiezziLogin_war/user/login1" >

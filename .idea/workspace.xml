@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d0c5433f-6bbb-441e-b1df-bc7eac01db28" name="Default" comment="修改mock可以mock多个">
-      <change afterPath="$PROJECT_DIR$/src/test/resource/case/horse_login.xml" afterDir="false" />
+    <list default="true" id="d0c5433f-6bbb-441e-b1df-bc7eac01db28" name="Default" comment="删除无用代码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/xuejungao/PayTestauto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xuejungao/PayTestauto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resource/service/service_host_url.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resource/service/service_host_url.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/xuejungao/core/Gunit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xuejungao/core/Gunit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resource/case/horse_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resource/case/horse_login.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -44,17 +43,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/PayTestauto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="16" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="16" />
+            <state relative-caret-position="285">
+              <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/core/Gunit.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="123">
+              <caret line="202" column="60" selection-start-line="202" selection-start-column="46" selection-end-line="202" selection-end-column="60" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="437">
-              <caret line="273" column="37" lean-forward="true" selection-start-line="273" selection-start-column="37" selection-end-line="273" selection-end-column="37" />
+              <caret line="273" column="37" selection-start-line="273" selection-start-column="37" selection-end-line="273" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -71,8 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/resource/case/horse_login.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="40" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="40" />
+            <state relative-caret-position="379">
+              <caret line="28" column="54" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -98,11 +112,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12">
-              <caret line="168" column="13" selection-start-line="168" selection-start-column="13" selection-end-line="168" selection-end-column="13" />
+            <state relative-caret-position="590">
+              <caret line="204" column="25" lean-forward="true" selection-start-line="204" selection-start-column="25" selection-end-line="204" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -153,7 +167,6 @@
       <find>pars</find>
       <find>parse</find>
       <find>fastjson</find>
-      <find>JSONObject</find>
       <find>method</find>
       <find>inputStream</find>
       <find>StringUtils</find>
@@ -167,6 +180,7 @@
       <find>mMockResult</find>
       <find>mockResult</find>
       <find>junit</find>
+      <find>JSONObject</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -200,7 +214,6 @@
         <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/mock/GenericServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/xuejungao/App.java" />
         <option value="$PROJECT_DIR$/src/test/resource/case/login.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/core/Gunit.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/FileUtils/HttpUtils.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/FileUtils/StringUtil.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/entity/DubboModel.java" />
@@ -217,11 +230,12 @@
         <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/FileUtils/HttpOrDubboEnun.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/entity/Assert.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/saxxml/SaxHandler.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java" />
         <option value="$PROJECT_DIR$/src/test/resource/service/service_host_url.xml" />
-        <option value="$PROJECT_DIR$/src/test/resource/case/horse_login.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/PayTestauto.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/core/Gunit.java" />
+        <option value="$PROJECT_DIR$/src/test/resource/case/horse_login.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java" />
       </list>
     </option>
   </component>
@@ -313,14 +327,6 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="resource" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="GunitTool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GunitTool" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resource" type="462c0819:PsiDirectoryNode" />
-              <item name="case" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -331,7 +337,7 @@
     <property name="SearchEverywhereHistoryKey" value="FilterRequest&#9;PSI&#9;JAVA://org.junit.internal.requests.FilterRequest" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1646967887820" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1646968414001" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -486,7 +492,7 @@
       <workItem from="1644310809061" duration="118000" />
       <workItem from="1644310932681" duration="1000" />
       <workItem from="1644819424986" duration="11646000" />
-      <workItem from="1646881416238" duration="3218000" />
+      <workItem from="1646881416238" duration="3775000" />
     </task>
     <task id="LOCAL-00001" summary="提交图片，展示在主页用来进行看的">
       <created>1571800391697</created>
@@ -586,19 +592,24 @@
       <option name="project" value="LOCAL" />
       <updated>1646966149946</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="新增仓库地址">
+      <created>1646967818008</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1646967818008</updated>
+    </task>
+    <task id="LOCAL-00016" summary="删除无用代码">
+      <created>1646967945195</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1646967945195</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PayTestauto - 2022.01.10 at 11h 36m 58s.xml">
-      <configuration name="PayTestauto" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PayTestauto - 2022.01.10 at 11h 44m 52s.xml">
-      <configuration name="PayTestauto" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PayTestauto - 2022.01.10 at 11h 49m 44s.xml">
-      <configuration name="PayTestauto" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="PayTestauto - 2022.01.10 at 13h 58m 11s.xml">
       <configuration name="PayTestauto" configurationId="JUnit" />
     </history-entry>
@@ -620,9 +631,18 @@
     <history-entry file="PayTestauto - 2022.01.10 at 14h 48m 51s.xml">
       <configuration name="PayTestauto" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="PayTestauto - 2022.03.11 at 11h 05m 51s.xml">
+      <configuration name="PayTestauto" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PayTestauto - 2022.03.11 at 11h 07m 38s.xml">
+      <configuration name="PayTestauto" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PayTestauto - 2022.03.11 at 11h 08m 38s.xml">
+      <configuration name="PayTestauto" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197457000" />
+    <option name="totallyTimeSpent" value="198014000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -642,7 +662,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.2967033" />
+      <window_info content_ui="combo" id="Project" order="5" weight="0.2967033" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
@@ -729,20 +749,22 @@
     <MESSAGE value="新增mock数据的问题" />
     <MESSAGE value="预留纯代码测试的功能开发" />
     <MESSAGE value="修改mock可以mock多个" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改mock可以mock多个" />
+    <MESSAGE value="新增仓库地址" />
+    <MESSAGE value="删除无用代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="删除无用代码" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java</url>
-          <line>211</line>
+          <line>205</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java</url>
-          <line>214</line>
+          <line>208</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
@@ -990,16 +1012,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/core/Gunit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="119" selection-start-line="119" selection-end-line="119" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/entity/Call.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1162,16 +1174,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="168" column="13" selection-start-line="168" selection-start-column="13" selection-end-line="168" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resource/case/login_mock.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
@@ -1186,27 +1188,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resource/case/horse_login.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="40" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../respository/junit/junit/4.11/junit-4.11.pom">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/PayTestauto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="16" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
-          <caret line="273" column="37" lean-forward="true" selection-start-line="273" selection-start-column="37" selection-end-line="273" selection-end-column="37" />
+          <caret line="273" column="37" selection-start-line="273" selection-start-column="37" selection-end-line="273" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/core/Gunit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="202" column="60" selection-start-line="202" selection-start-column="46" selection-end-line="202" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/PayTestauto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resource/case/horse_login.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="28" column="54" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="204" column="25" lean-forward="true" selection-start-line="204" selection-start-column="25" selection-end-line="204" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

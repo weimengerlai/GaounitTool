@@ -199,6 +199,9 @@ public class Gunit extends ParentRunner<TestSuitRunner> {
     // 获取路径的方法
     public void getAllFileXml(){
 
+        System.out.println("当前的对象"+getClass().getClassLoader());
+        System.out.println("当前的对象"+getClass().getClassLoader().getResource("case"));
+
         // 获取当前 cases文件路径
         String path = getClass().getClassLoader().getResource("case").getPath();
         // 对下面文件进行遍历,获取所有的,xml文件
