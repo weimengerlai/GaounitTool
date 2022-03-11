@@ -3,14 +3,18 @@ package com.xuejungao.core;
 
 import com.google.gson.Gson;
 import com.xuejungao.FileUtils.*;
+import com.xuejungao.dao.LoginMapperDao;
 import com.xuejungao.entity.*;
 import org.junit.runners.model.Statement;
-
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.*;
 
 public class TestCaseStatement extends Statement {
 
+
+    @Autowired
+    private LoginMapperDao mLoginMapperDao;
 
     // 声明 Statement
     private Statement mStatement;
@@ -59,7 +63,6 @@ public class TestCaseStatement extends Statement {
 
         // 测试用例执行之后执行
 
-
     }
 
 
@@ -81,35 +84,12 @@ public class TestCaseStatement extends Statement {
 
         String method = service.getMethod();
 
-        if(testCase.getAnAssert() != null){
-            // 请求之前首先mock
-            List<MockResult> mMockResultList = testCase.getAnAssert().getmMockResult();
-            // 执行mock
-            for (MockResult mMockResult : mMockResultList){
-                //
-                if(mMockResult.getMockEntity() != null &&
-                        mMockResult.getMockMethod() != null){
-                    // 进行mcok数据
-                    try {
-                        // 解析数据转为对象
-                        Gson mGson = new Gson();
-                        String mockJson = mMockResult.getMockResult();
-                        Class clazz = Class.forName(mMockResult.getMockEntity());
-                        System.out.println(testCase.getId()+"dunbo请求参数mcok对象:"+mockJson+"====="+clazz);
-                        // json转为对象
-                        Object mObject = mGson.fromJson(mockJson,clazz);
-                        System.out.println(testCase.getId()+"dunbo请求参数mcok对象:"+mObject);
-                        // 保存的key
-                        String key = mMockResult.getMockUrl()+"."+mMockResult.getMockMethod();
-                        // 保存到redis
-                        RedisClient.getInstance().set(mObject,key);
-                    } catch (ClassNotFoundException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }
+        // 保存mock数据
+        mock_save(testCase);
+
+        //  执行SQL的断言
+        exe_sql(testCase);
+
 
 
         // 打印请求参数
@@ -215,5 +195,71 @@ public class TestCaseStatement extends Statement {
             // 如果期望值 和 返回值不想通设置为 false
             assert false;
         }
+    }
+
+    // 插入mock数据
+    public void mock_save(TestCase testCase){
+
+        if(testCase.getAnAssert() == null){
+           return;
+        }
+        // 请求之前首先mock
+        List<MockResult> mMockResultList = testCase.getAnAssert().getmMockResult();
+        // 执行mock
+        for (MockResult mMockResult : mMockResultList){
+            //
+            if(mMockResult.getMockMethod() == null){
+               return;
+            }
+            if(mMockResult.getMockEntity() == null){
+                return;
+            }
+            // 进行mcok数据
+            try {
+                // 解析数据转为对象
+                Gson mGson = new Gson();
+                String mockJson = mMockResult.getMockResult();
+                Class clazz = Class.forName(mMockResult.getMockEntity());
+                System.out.println(testCase.getId()+"dunbo请求参数mcok对象:"+mockJson+"====="+clazz);
+                // json转为对象
+                Object mObject = mGson.fromJson(mockJson,clazz);
+                System.out.println(testCase.getId()+"dunbo请求参数mcok对象:"+mObject);
+                // 保存的key
+                String key = mMockResult.getMockUrl()+"."+mMockResult.getMockMethod();
+                // 保存到redis
+                RedisClient.getInstance().set(mObject,key);
+            } catch (ClassNotFoundException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+    }
+
+    // 执行SQL的方法
+    public void exe_sql(TestCase testCase){
+
+        if(testCase.getAnAssert().getSql() == null){
+            // 有内容
+            return;
+        }
+        SQL mSQL = testCase.getAnAssert().getSql();
+
+        if(StringUtil.isNull(mSQL.getDatabase())){
+            return;
+        }
+        if(StringUtil.isNull(mSQL.getExe_sql())){
+            return;
+        }
+        if(StringUtil.isNull(mSQL.getSql_result())){
+            return;
+        }
+        if(StringUtil.isNull(mSQL.getDatabase())){
+            return;
+        }
+
+//        // 执行 sql
+//        Map<String,String> map = mLoginMapperDao.findLoginByName(mSQL.getExe_sql());
+//
+//        System.out.println("当期那查询返回的数据"+map);
     }
 }

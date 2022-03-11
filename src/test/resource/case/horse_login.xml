@@ -41,14 +41,14 @@
             </result>
 
             <!--执行SQL 数据库的sql-->
-            <!--  <SQL database="jenkins">
+              <SQL database="jenkins">
 
-                  &lt;!&ndash;执行是sql&ndash;&gt;
+                  <!--执行是sql-->
                   <exe_sql>
-                      SELECT * from Login where username = 'zhangsan' and passwrod = '123456'
+                      SELECT * from horseLogin where username = 'zhangsan' and passwrod = 'e10adc3949ba59abbe56e057f20f883e'
                   </exe_sql>
 
-                  &lt;!&ndash;断言返回结果&ndash;&gt;
+                  <!--断言返回结果-->
                   <sql_result>
 
                       {
@@ -58,7 +58,7 @@
 
                   </sql_result>
 
-              </SQL>-->
+              </SQL>
         </Assert>
     </case>
 </testcase>

@@ -34,6 +34,13 @@ public class StringUtil {
 		return sb.toString();
 	}
 
+	public static  boolean isNull(String name){
+		if(name == null || name.equals("") || name.length() == 0 || name.equals("null")){
+			return true;
+		}
+		return false;
+	}
+
 	public static void main(String[] args) {
 		String str = "aaa{} bbb{} ccc{}";
 		System.out.println(StringUtil.format(str, "1", "2", "3"));
