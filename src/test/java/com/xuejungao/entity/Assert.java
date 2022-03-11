@@ -1,5 +1,7 @@
 package com.xuejungao.entity;
 
+import java.util.List;
+
 public class Assert {
 
     // 返回结果 期望
@@ -7,14 +9,14 @@ public class Assert {
     // 执行sql
     private SQL sql;
     // mock数据
-    private MockResult mMockResult;
+    private List<MockResult> mMockResult;
 
-    public MockResult getmMockResult() {
+    public List<MockResult> getmMockResult() {
         return mMockResult;
     }
 
-    public void setmMockResult(MockResult mMockResult) {
-        this.mMockResult = mMockResult;
+    public void setmMockResult(List<MockResult> mMockResultList) {
+        this.mMockResult = mMockResultList;
     }
 
     public Result getmResult() {

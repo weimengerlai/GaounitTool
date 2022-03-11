@@ -89,16 +89,32 @@ public class TestCaseStatement extends Statement {
 
         if(testCase.getAnAssert() != null){
             // 请求之前首先mock
-            MockResult mMockResult = testCase.getAnAssert().getmMockResult();
+            List<MockResult> mMockResultList = testCase.getAnAssert().getmMockResult();
             // 执行mock
-            RestTemplate restTemplate=new RestTemplate();
-            // 转为json对象
-            String mckresult = mMockResult.getMockResult();
-            // url
-            String mockUrl = mMockResult.getMockUrl();
-            // 加入urr 和数据
-            map.put("mockJson",mckresult);
-            map.put("mockUrl",mockUrl);
+            for (MockResult mMockResult : mMockResultList){
+                //
+                if(mMockResult.getMockEntity() != null &&
+                        mMockResult.getMockMethod() != null){
+                    // 进行mcok数据
+                    try {
+                        // 解析数据转为对象
+                        Gson mGson = new Gson();
+                        String mockJson = mMockResult.getMockResult();
+                        Class clazz = Class.forName(mMockResult.getMockEntity());
+                        System.out.println(testCase.getId()+"dunbo请求参数mcok对象:"+mockJson+"====="+clazz);
+                        // json转为对象
+                        Object mObject = mGson.fromJson(mockJson,clazz);
+                        System.out.println(testCase.getId()+"dunbo请求参数mcok对象:"+mObject);
+                        // 保存的key
+                        String key = mMockResult.getMockUrl()+"."+mMockResult.getMockMethod();
+                        // 保存到redis
+                        RedisClient.getInstance().set(mObject,key);
+                    } catch (ClassNotFoundException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                }
+            }
         }
 
 
@@ -107,27 +123,6 @@ public class TestCaseStatement extends Statement {
         System.out.println(testCase.getId()+"请求的参数是:"+map.toString());
         System.out.println(testCase.getId()+"请求的方法是:"+service.getMethod());
 
-        if(testCase.getAnAssert().getmMockResult().getMockEntity() != null &&
-                testCase.getAnAssert().getmMockResult().getMockMethod() != null){
-            // 进行mcok数据
-            try {
-                // 解析数据转为对象
-                Gson mGson = new Gson();
-                String mockJson = testCase.getAnAssert().getmMockResult().getMockResult();
-                Class clazz = Class.forName(testCase.getAnAssert().getmMockResult().getMockEntity());
-                System.out.println(testCase.getId()+"dunbo请求参数mcok对象:"+mockJson+"====="+clazz);
-                // json转为对象
-                Object mObject = mGson.fromJson(mockJson,clazz);
-                System.out.println(testCase.getId()+"dunbo请求参数mcok对象:"+mObject);
-                // 保存的key
-                String key = testCase.getAnAssert().getmMockResult().getMockUrl()+"."+testCase.getAnAssert().getmMockResult().getMockMethod();
-                // 保存到redis
-                RedisClient.getInstance().set(mObject,key);
-            } catch (ClassNotFoundException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
 
         // 接口请求返回的数据
         String json = "";

@@ -35,6 +35,8 @@ public class SaxHandler extends DefaultHandler {
     private String JsonRsult="";
     // 需要mock的结果
     private String mockResult = "";
+    // List列表
+    private List<MockResult> mMockResultList = new ArrayList<>();
 
     // 定义列表
     private List<TestCase> testCaseList = new ArrayList<TestCase>();
@@ -67,6 +69,8 @@ public class SaxHandler extends DefaultHandler {
         if(qName.equals("case")){
 
             testCase = new TestCase();
+            // 清空列表
+            mMockResultList.clear();
 
             // 获取属性个数
             int number = attributes.getLength();
@@ -269,6 +273,7 @@ public class SaxHandler extends DefaultHandler {
             String str2 = str1.replaceAll("\r\n|\r|\n", "");
             // 设置属性
             mMockResult.setMockResult(str2);
+            mMockResultList.add(mMockResult);
         }
 
 
@@ -295,7 +300,7 @@ public class SaxHandler extends DefaultHandler {
             // 设置期望返回数据对象
             anAssert.setmResult(result);
             // 设置mock对象数据
-            anAssert.setmMockResult(mMockResult);
+            anAssert.setmMockResult(mMockResultList);
         }
 
         // Assert
