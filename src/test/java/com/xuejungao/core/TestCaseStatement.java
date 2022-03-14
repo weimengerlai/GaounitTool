@@ -3,18 +3,12 @@ package com.xuejungao.core;
 
 import com.google.gson.Gson;
 import com.xuejungao.FileUtils.*;
-import com.xuejungao.dao.LoginMapperDao;
 import com.xuejungao.entity.*;
 import org.junit.runners.model.Statement;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.*;
 
 public class TestCaseStatement extends Statement {
 
-
-    @Autowired
-    private LoginMapperDao mLoginMapperDao;
 
     // 声明 Statement
     private Statement mStatement;
@@ -256,10 +250,10 @@ public class TestCaseStatement extends Statement {
         if(StringUtil.isNull(mSQL.getDatabase())){
             return;
         }
-
-//        // 执行 sql
-//        Map<String,String> map = mLoginMapperDao.findLoginByName(mSQL.getExe_sql());
+//        System.out.println("当前的路径"+mSQL.getSqlPath());
+//        // 查询数据库
+//        List<String> jsonList = JdbcUtils.SelectSQl(mSQL.getExe_sql(),mSQL.getSqlPath());
 //
-//        System.out.println("当期那查询返回的数据"+map);
+//        System.out.println("当前的列表"+jsonList);
     }
 }

@@ -1,21 +1,28 @@
 package com.xuejungao.core;
 
 import com.xuejungao.FileUtils.FileUtils;
+import com.xuejungao.dao.LoginMapperDao;
 import com.xuejungao.entity.Service;
 import com.xuejungao.entity.TestCase;
 import com.xuejungao.saxxml.SaxHandler;
 import com.xuejungao.saxxml.SaxHostHandler;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.runner.Description;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runners.ParentRunner;
 import org.junit.runners.model.InitializationError;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.IOException;
+import java.io.Reader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -45,6 +52,9 @@ public class Gunit extends ParentRunner<TestSuitRunner> {
     public Gunit(Class<?> testClass) throws InitializationError {
         super(testClass);
 
+        // 获取放置数据库配置文件路径path
+        String db_path = getClass().getClassLoader().getResource("config").getPath()+"/spring/spring-mybatis.xml";
+
         // 调用获取文件的地方法
         getAllFileXml();
 
@@ -65,6 +75,8 @@ public class Gunit extends ParentRunner<TestSuitRunner> {
             for (int i=0; i< testCaseList.size(); i++){
                 for (String id : ids){
                     if(id.equals(testCaseList.get(i).getId())){
+                        // 设置数据库配置文件加载路径
+                        testCaseList.get(i).getAnAssert().getSql().setSqlPath(db_path);
                         // 实例化 对象 TestSuitRunner
                         TestSuitRunner testSuitRunner = new TestSuitRunner(testClass,testCaseList.get(i),serviceMap);
                         // 加入到列表里面
@@ -80,6 +92,8 @@ public class Gunit extends ParentRunner<TestSuitRunner> {
             for (int i=0; i< testCaseList.size(); i++){
                 for (String tag : tags){
                     if(tag.equals(testCaseList.get(i).getTag())){
+                        // 设置数据库配置文件加载路径
+                        testCaseList.get(i).getAnAssert().getSql().setSqlPath(db_path);
                         // 实例化 对象 TestSuitRunner
                         TestSuitRunner testSuitRunner = new TestSuitRunner(testClass,testCaseList.get(i),serviceMap);
                         // 加入到列表里面
@@ -93,7 +107,8 @@ public class Gunit extends ParentRunner<TestSuitRunner> {
             // 执行全量
             // 使用for循环 执行测试用例
             for (int i=0; i< testCaseList.size(); i++){
-
+                // 设置数据库配置文件加载路径
+                testCaseList.get(i).getAnAssert().getSql().setSqlPath(db_path);
                 // 实例化 对象 TestSuitRunner
                 TestSuitRunner testSuitRunner = new TestSuitRunner(testClass,testCaseList.get(i),serviceMap);
                 // 加入到列表里面
@@ -113,47 +128,7 @@ public class Gunit extends ParentRunner<TestSuitRunner> {
 //            System.out.println("当前需要运行的测试用例是:tag"+tag);
 //        }
 
-
         // 测试用例运行的总体逻辑是如果有 id 就运行 id,如果没有id就运行Tag,如果没有tag,就运行全部测试用例
-
-        // 获取放置数据库配置文件路径path
-        String path = getClass().getClassLoader().getResource("config").getPath();
-//        // 加载数据库配置文件
-//        // /Users/gaoxuejun/Desktop/Desktop/java_tool_develop/GunitTool/src/test/resource/config/spring/spring-mybatis.xml
-//        context = new ClassPathXmlApplicationContext(path+"/spring-mybatis.xml");
-//        // 获取bean对象
-//        LoginMapperDao loginMapperDao = (LoginMapperDao) context.getBean("LoginMapperDao");
-
-//
-//        if(null == loginMapperDao){
-//
-//            System.out.println("对象不为空");
-//        }
-
-
-//        try {
-//            //使用MyBatis提供的Resources类加载mybatis的配置文件
-//            Reader reader = Resources.getResourceAsReader(path+"/spring/spring-mybatis.xml");
-//            //构建sqlSession的工厂
-//            SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(reader);
-//
-//            SqlSession session= sessionFactory.openSession();
-//
-//            LoginMapperDao mapper=session.getMapper(LoginMapperDao.class);
-//
-//            Map<String,String> map = mapper.findLoginByName(" select * from qiezzi_login where username=='ASasd123' ");
-//
-//            System.out.println("当前的长度是："+map.size());
-////            User user= mapper.GetUserByID(1);
-////            System.out.println(user.toString());
-//
-//            session.commit();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-
-
-
     }
 
 
@@ -190,10 +165,8 @@ public class Gunit extends ParentRunner<TestSuitRunner> {
 
         // 使用for循环遍历
         for (File file :  fileList){
-
             saxServiceXml(file.toString());
         }
-
     }
 
     // 获取路径的方法

@@ -6,6 +6,17 @@ public class SQL {
     private String exe_sql;
     private String sql_result;
 
+    // 数据库配置加载路径
+    private String sqlPath;
+
+    public String getSqlPath() {
+        return sqlPath;
+    }
+
+    public void setSqlPath(String sqlPath) {
+        this.sqlPath = sqlPath;
+    }
+
     public String getDatabase() {
         return database;
     }
