@@ -53,7 +53,7 @@ public class Gunit extends ParentRunner<TestSuitRunner> {
         super(testClass);
 
         // 获取放置数据库配置文件路径path
-        String db_path = getClass().getClassLoader().getResource("config").getPath()+"/spring/spring-mybatis.xml";
+        String db_path = getClass().getClassLoader().getResource("config").getPath()+"/spring-mybatis.xml";
 
         // 调用获取文件的地方法
         getAllFileXml();

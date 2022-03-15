@@ -45,16 +45,16 @@
 
                   <!--执行是sql-->
                   <exe_sql>
-                      SELECT * from horseLogin where username = 'zhangsan' and passwrod = 'e10adc3949ba59abbe56e057f20f883e'
+                      SELECT * FROM db_horseLogin WHERE username = 'zhangsan' and pwd = 'e10adc3949ba59abbe56e057f20f883e'
                   </exe_sql>
 
                   <!--断言返回结果-->
                   <sql_result>
 
                       {
-                          "login_id":10000,
-                          "username":"zhangsan"
-                      }
+                          "id":"10000",
+                          "pwd":"e10adc3949ba59abbe56e057f20f883e",
+                          "username":"zhangsan",
 
                   </sql_result>
 

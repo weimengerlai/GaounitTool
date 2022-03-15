@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+
+    <!-- 打印 数据库查询的时候的日志 -->
+    <settings>
+        <!-- 打印查询语句 -->
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+    </settings>
+
+
+    <!-- 设置 链接数据库需要的字段 -->
+    <environments default="development">
+
+        <environment id="development">
+            <transactionManager type="JDBC" />
+
+            <!-- 配置数据库连接信息 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="jdbc:mysql://127.0.0.1:3306/db_horse?useSSL=true" />
+                <property name="username" value="root" />
+                <property name="password" value="123456" />
+            </dataSource>
+        </environment>
+
+
+    </environments>
+
+
+    <!-- 告诉我们的mapper文件放在哪里-->
+    <mappers>
+        <!-- 注册userMapper.xml文件，
+           userMapper.xml位于me.gacl.mapping这个包下，所以resource写成me/gacl/mapping/userMapper.xml-->
+        <mapper resource="mapper/LoginMapperDao.xml"/>
+
+    </mappers>
+
+</configuration>

@@ -60,10 +60,6 @@ public class JdbcUtils {
                     Object value = entry.getValue();
 
                     System.out.println("key==="+key+"value====="+value);
-//                    if(key.equals("qTimestamp")){
-//
-//                        value = DataTimeUtil.dateToStamp(value+"");
-//                    }
                     // 加入到对象里面
                     jsonObject.addProperty(key+"",value+"");
                 }

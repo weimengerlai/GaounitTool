@@ -11,13 +11,12 @@
     <!-- resultType 返回类型就是我们需要返回的实体类 Login -->
     <!-- where 后面的参数 username 和 password 就是我们在 findLoginByName(String username,String password); 里面的参数-->
 
+    <!--   -->
 
-    <select id="findLoginByName" resultType="Map">
+    <select id="findLoginByName" resultType="java.util.HashMap">
 
-       #{exesql}
-
+          SELECT * FROM db_horseLogin WHERE username = 'zhangsan' and pwd = 'e10adc3949ba59abbe56e057f20f883e'
 
     </select>
-
 
 </mapper>

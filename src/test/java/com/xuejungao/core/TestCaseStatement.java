@@ -250,10 +250,30 @@ public class TestCaseStatement extends Statement {
         if(StringUtil.isNull(mSQL.getDatabase())){
             return;
         }
-//        System.out.println("当前的路径"+mSQL.getSqlPath());
+        System.out.println("当前的路径"+mSQL.getSqlPath());
 //        // 查询数据库
 //        List<String> jsonList = JdbcUtils.SelectSQl(mSQL.getExe_sql(),mSQL.getSqlPath());
 //
 //        System.out.println("当前的列表"+jsonList);
+//
+//        if(jsonList == null || jsonList.size() == 0){
+//            return;
+//        }
+//        // 使用for循环进行对比
+//        // 布尔值
+//        boolean isEquals = false;
+//        for (int i=0;i<jsonList.size();i++){
+//            if(jsonList.get(i).equals(mSQL.getSql_result()) || jsonList.get(i).contains(mSQL.getSql_result())){
+//                // 和期望值做对比
+//                System.out.println("当前服务器数据库查询出来的结果是:"+jsonList.get(i));
+//                // 设置 成功
+//                isEquals = true;
+//                // 只要有一条例相同就中断for循环
+//                break;
+//            }
+//        }
+//        // 如果没有相等的就设置为false
+//        System.out.println("当前期望数据库查询出来的结果是:"+mSQL.getSql_result());
+//        assert isEquals;
     }
 }

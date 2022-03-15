@@ -35,6 +35,10 @@ public class SaxHandler extends DefaultHandler {
     private String JsonRsult="";
     // 需要mock的结果
     private String mockResult = "";
+    // 执行SQL的时候的期望值
+    private String SQLResult = "";
+    // 需要执行的SQL 语句
+    private String needSql = "";
     // List列表
     private List<MockResult> mMockResultList = new ArrayList<>();
 
@@ -217,6 +221,16 @@ public class SaxHandler extends DefaultHandler {
 
             mockResult = "";
         }
+        // 开始每一条测试用例之前将我们以前的期望值设置为""
+        if(qName.equals("sql_result")){
+
+            SQLResult = "";
+        }
+        // needSql
+        if(qName.equals("exe_sql")){
+
+            needSql = "";
+        }
     }
 
 
@@ -277,16 +291,17 @@ public class SaxHandler extends DefaultHandler {
         }
 
 
-        // exe_sql
+        // exe_sql  needSql
         if(qName.equals("exe_sql")){
-
-            sql.setExe_sql(value);
+            String str2 = needSql.replaceAll("\r\n|\r|\n", "").trim();
+            sql.setExe_sql(str2.trim());
         }
 
         // sql_result
         if(qName.equals("sql_result")){
-
-            sql.setSql_result(value);
+            String str1 = SQLResult.replaceAll(" ", "");
+            String str2 = str1.replaceAll("\r\n|\r|\n", "");
+            sql.setSql_result(str2);
         }
 
         // SQL
@@ -343,6 +358,16 @@ public class SaxHandler extends DefaultHandler {
         if(name.equals("MockResult")){
 
             mockResult += value;
+        }
+        // 判断是不是 JsonRsult
+        if(name.equals("sql_result")){
+
+            SQLResult += value;
+        }
+        // needSql
+        if(name.equals("exe_sql")){
+
+            needSql += value;
         }
     }
 }
