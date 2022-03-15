@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d0c5433f-6bbb-441e-b1df-bc7eac01db28" name="Default" comment="新增数据库知识">
-      <change afterPath="$PROJECT_DIR$/src/test/resource/config/spring-mybatis.xml" afterDir="false" />
+    <list default="true" id="d0c5433f-6bbb-441e-b1df-bc7eac01db28" name="Default" comment="新增SQL 查询的功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/xuejungao/FileUtils/JdbcUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xuejungao/FileUtils/JdbcUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/xuejungao/core/Gunit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xuejungao/core/Gunit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/xuejungao/saxxml/SaxHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/xuejungao/saxxml/SaxHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resource/case/horse_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resource/case/horse_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resource/config/spring/spring-mybatis.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resource/mapper/LoginMapperDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resource/mapper/LoginMapperDao.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -69,7 +61,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/resource/case/horse_login.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="588">
@@ -78,7 +70,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/core/TestCaseStatement.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="770">
@@ -141,8 +133,8 @@
       <find>当前的期望值</find>
       <find>mockResult</find>
       <find>sql</find>
-      <find>exe_sql</find>
       <find>当前的sql</find>
+      <find>exe_sql</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -235,8 +227,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1680" />
-    <option name="height" value="1050" />
+    <option name="y" value="25" />
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -297,7 +290,7 @@
     <property name="SearchEverywhereHistoryKey" value="FilterRequest&#9;PSI&#9;JAVA://org.junit.internal.requests.FilterRequest" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1647314534713" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1647317515418" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -456,7 +449,7 @@
       <workItem from="1644310809061" duration="118000" />
       <workItem from="1644310932681" duration="1000" />
       <workItem from="1644819424986" duration="11646000" />
-      <workItem from="1646881416238" duration="20230000" />
+      <workItem from="1646881416238" duration="20913000" />
     </task>
     <task id="LOCAL-00001" summary="提交图片，展示在主页用来进行看的">
       <created>1571800391697</created>
@@ -591,7 +584,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647228874292</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="新增SQL 查询的功能">
+      <created>1647314616608</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1647314616608</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -627,7 +627,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214469000" />
+    <option name="totallyTimeSpent" value="215152000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -640,6 +640,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -738,7 +739,8 @@
     <MESSAGE value="增加项目" />
     <MESSAGE value="优化mock数据" />
     <MESSAGE value="新增数据库知识" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增数据库知识" />
+    <MESSAGE value="新增SQL 查询的功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增SQL 查询的功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1155,13 +1157,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resource/case/horse_login.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="46" column="26" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/xuejungao/saxxml/SaxHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1193,6 +1188,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resource/case/horse_login.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="46" column="26" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="26" />
         </state>
       </provider>
     </entry>
