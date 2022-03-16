@@ -43,7 +43,7 @@ public class JdbcUtils {
             // 执行查询数据库的语句
             List<Map>  mapList = loginMapperDao.findLoginSql(sql);
             // 打印
-            System.out.println("当前的长度是:"+mapList.size());
+//            System.out.println("当前的长度是:"+mapList.size());
             // 对map进行遍历
             for(Map map : mapList){
                 // 实例化 josnobject
@@ -59,7 +59,7 @@ public class JdbcUtils {
                     // 获取值
                     Object value = entry.getValue();
 
-                    System.out.println("key==="+key+"value====="+value);
+//                    System.out.println("key==="+key+"value====="+value);
                     // 加入到对象里面
                     jsonObject.addProperty(key+"",value+"");
                 }
