@@ -41,7 +41,7 @@ public class JdbcUtils {
             LoginMapperDao loginMapperDao = sqlSession.getMapper(LoginMapperDao.class);
 
             // 执行查询数据库的语句
-            List<Map>  mapList = loginMapperDao.findLoginByName(sql);
+            List<Map>  mapList = loginMapperDao.findLoginSql(sql);
             // 打印
             System.out.println("当前的长度是:"+mapList.size());
             // 对map进行遍历

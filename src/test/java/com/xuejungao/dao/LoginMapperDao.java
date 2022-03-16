@@ -12,4 +12,7 @@ public interface LoginMapperDao {
 
     // 通过条件查询 数据
     List<Map> findLoginByName(@Param("exesql") String exesql);
+
+    List<Map> findLoginSql(@Param("sql") String sql);
+
 }
