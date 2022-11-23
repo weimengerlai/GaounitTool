@@ -147,6 +147,8 @@ public class TestCaseStatement extends Statement {
         // 测试纯代码的jar 包
         if(service.getType().equals(HttpOrDubboEnun.NATIVE_TYPE.getValue())){
 
+            // 同步包
+
         }
 
         // 打印返回结果

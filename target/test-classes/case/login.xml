@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testcase id="login_case" desc="登录的所有的测试用例">
+
+
+    <!--每一条测试用例标签case-->
+    <!-- 输入用户名为空，密码为空的测试用例 -->
+    <case id="login_user_name_no_null" desc="输入用户名为空,密码为空的测试用例" tag="login_user_name">
+
+        <!--网络请求的参数-->
+        <!--测试用例提交的参数 执行网络请求的标签 -->
+        <!-- service 主要就是设置网络请求的URL 请求类型 请求方法 参数-->
+        <call service="loginUserPwd">
+            <!--参数类型 paran-->
+            <!--<param name="AppType"></param>-->
+        </call>
+        <!-- 在控制台输出标签 如果有这个标签就输出内容,没有就不输出内容,就是接口返回的数据-->
+        <print/>
+        <!-- 添加断言标签 分为结果断言 和 数据库断言 -->
+        <Assert>
+            <!-- 结果断言 -->
+            <!-- 断言状态 statue-->
+            <result statue = "0">
+                <JsonRsult>
+                    {
+                        "stasus":1,
+                        "username":"",
+                        "message":"用户名不能为空",
+                        "userId":0
+                    }
+                </JsonRsult>
+                <!-- modk 掉第三方请求 -->
+                <MockResult mockUrl = "" >
+
+                </MockResult>
+            </result>
+
+            <!--执行SQL 数据库的sql-->
+          <!--  <SQL database="jenkins">
+
+                &lt;!&ndash;执行是sql&ndash;&gt;
+                <exe_sql>
+                    SELECT * from Login where username = 'zhangsan' and passwrod = '123456'
+                </exe_sql>
+
+                &lt;!&ndash;断言返回结果&ndash;&gt;
+                <sql_result>
+
+                    {
+                        "login_id":10000,
+                        "username":"zhangsan"
+                    }
+
+                </sql_result>
+
+            </SQL>-->
+        </Assert>
+    </case>
+
+
+    <!-- 输入用户名长度为0，密码为空的测试用例 -->
+    <case id="login_user_name_no_empt" desc="输入用户名长度为0，密码为空的测试用例" tag="login_user_name">
+
+        <!--网络请求的参数-->
+        <!--测试用例提交的参数 执行网络请求的标签 -->
+        <!-- service 主要就是设置网络请求的URL 请求类型 请求方法 参数-->
+        <call service="loginUserPwd">
+            <!--参数类型 paran-->
+            <param name="username"></param>
+        </call>
+        <!-- 在控制台输出标签 如果有这个标签就输出内容,没有就不输出内容,就是接口返回的数据-->
+        <print/>
+        <!-- 添加断言标签 分为结果断言 和 数据库断言 -->
+        <Assert>
+            <!-- 结果断言 -->
+            <!-- 断言状态 statue-->
+            <result statue = "0">
+                <JsonRsult>
+                    {
+                        "stasus":1,
+                        "username":"",
+                        "message":"用户名不能为空",
+                        "userId":0
+                    }
+                </JsonRsult>
+            </result>
+        </Assert>
+    </case>
+
+      <!-- 输入用户不为空，密码为空的测试用例 -->
+    <case id="login_user_name_pwd_no_null" desc="输入用户不为空，密码为空的测试用例" tag="login_user_name">
+
+        <!--网络请求的参数-->
+        <!--测试用例提交的参数 执行网络请求的标签 -->
+        <!-- service 主要就是设置网络请求的URL 请求类型 请求方法 参数-->
+        <call service="loginUserPwd">
+            <!--参数类型 paran-->
+            <param name="username">zhangsan</param>
+        </call>
+        <!-- 在控制台输出标签 如果有这个标签就输出内容,没有就不输出内容,就是接口返回的数据-->
+        <print/>
+        <!-- 添加断言标签 分为结果断言 和 数据库断言 -->
+        <Assert>
+            <!-- 结果断言 -->
+            <!-- 断言状态 statue-->
+            <result statue = "0">
+                <JsonRsult>
+                    {
+                        "stasus":1,
+                        "username":"",
+                        "message":"密码不能为空",
+                        "userId":0
+                    }
+                </JsonRsult>
+            </result>
+        </Assert>
+    </case>
+
+
+    <!-- 输入用户不为空，密码长度为0 -->
+    <case id="login_user_name_pwd_length0" desc="输入用户不为空，密码长度为0" tag="login_user_name">
+
+        <!--网络请求的参数-->
+        <!--测试用例提交的参数 执行网络请求的标签 -->
+        <!-- service 主要就是设置网络请求的URL 请求类型 请求方法 参数-->
+        <call service="loginUserPwd">
+            <!--参数类型 paran-->
+            <param name="username">zhangsan</param>
+            <param name="password"></param>
+        </call>
+        <!-- 在控制台输出标签 如果有这个标签就输出内容,没有就不输出内容,就是接口返回的数据-->
+        <print/>
+        <!-- 添加断言标签 分为结果断言 和 数据库断言 -->
+        <Assert>
+            <!-- 结果断言 -->
+            <!-- 断言状态 statue-->
+            <result statue = "0">
+                <JsonRsult>
+                    {
+                        "stasus":1,
+                        "username":"",
+                        "message":"密码不能为空",
+                        "userId":0
+                    }
+                </JsonRsult>
+            </result>
+        </Assert>
+    </case>
+
+
+    <!-- 输入用户名不为空，但是用户名错误，密码错误 -->
+    <case id="login_user_name_error" desc="输入用户名不为空，但是用户名错误，密码错误" tag="login_user_name">
+
+        <!--网络请求的参数-->
+        <!--测试用例提交的参数 执行网络请求的标签 -->
+        <!-- service 主要就是设置网络请求的URL 请求类型 请求方法 参数-->
+        <call service="loginUserPwd">
+            <!--参数类型 paran-->
+            <param name="username">zhangsan1</param>
+            <param name="password">123456</param>
+        </call>
+        <!-- 在控制台输出标签 如果有这个标签就输出内容,没有就不输出内容,就是接口返回的数据-->
+        <print/>
+        <!-- 添加断言标签 分为结果断言 和 数据库断言 -->
+        <Assert>
+            <!-- 结果断言 -->
+            <!-- 断言状态 statue-->
+            <result statue = "0">
+                <JsonRsult>
+                    {
+                        "stasus":1,
+                        "username":"",
+                        "message":"用户名或者密码错误",
+                        "userId":0
+                    }
+                </JsonRsult>
+            </result>
+        </Assert>
+    </case>
+
+
+    <!-- 输入用户名不为空，密码不为空，但是密码错误 -->
+    <case id="login_user_name_pwd_error" desc="输入用户名不为空，密码不为空，但是密码错误" tag="login_user_name">
+
+        <!--网络请求的参数-->
+        <!--测试用例提交的参数 执行网络请求的标签 -->
+        <!-- service 主要就是设置网络请求的URL 请求类型 请求方法 参数-->
+        <call service="loginUserPwd">
+            <!--参数类型 paran-->
+            <param name="username">zhangsan</param>
+            <param name="password">1234567</param>
+        </call>
+        <!-- 在控制台输出标签 如果有这个标签就输出内容,没有就不输出内容,就是接口返回的数据-->
+        <print/>
+        <!-- 添加断言标签 分为结果断言 和 数据库断言 -->
+        <Assert>
+            <!-- 结果断言 -->
+            <!-- 断言状态 statue-->
+            <result statue = "0">
+                <JsonRsult>
+                    {
+                        "stasus":1,
+                        "username":"",
+                        "message":"用户名或者密码错误",
+                        "userId":0
+                    }
+                </JsonRsult>
+            </result>
+        </Assert>
+    </case>
+
+
+    <!-- 输入用户名用户名正确，密码正确  -->
+    <case id="login_user_name_pwd_success" desc="输入用户名用户名正确，密码正确" tag="login_user_name">
+
+        <!--网络请求的参数-->
+        <!--测试用例提交的参数 执行网络请求的标签 -->
+        <!-- service 主要就是设置网络请求的URL 请求类型 请求方法 参数-->
+        <call service="loginUserPwd">
+            <!--参数类型 paran-->
+            <param name="username">zhangsan</param>
+            <param name="password">123456</param>
+        </call>
+        <!-- 在控制台输出标签 如果有这个标签就输出内容,没有就不输出内容,就是接口返回的数据-->
+        <print/>
+        <!-- 添加断言标签 分为结果断言 和 数据库断言 -->
+        <Assert>
+            <!-- 结果断言 -->
+            <!-- 断言状态 statue-->
+            <result statue = "0">
+                <JsonRsult>
+                    {
+                        "stasus":0,
+                        "username":"zhangsan",
+                        "message":"登录成功",
+                        "userId":10000
+                    }
+                </JsonRsult>
+            </result>
+        </Assert>
+    </case>
+
+    <!--&lt;!&ndash; 设备类型没有的&ndash;&gt;-->
+    <!--<case id="login_user_name_no_appType_null" desc="登陆没有设备类型,AppType关键字不上传" tag="login_user_name">-->
+
+        <!--&lt;!&ndash;网络请求的参数&ndash;&gt;-->
+
+        <!--&lt;!&ndash;测试用例提交的参数 执行网络请求的标签 &ndash;&gt;-->
+        <!--&lt;!&ndash; service 主要就是设置网络请求的URL 请求类型 请求方法 参数&ndash;&gt;-->
+        <!--<call service="loginUserPwd">-->
+
+        <!--</call>-->
+
+        <!--&lt;!&ndash; 在控制台输出标签 如果有这个标签就输出内容,没有就不输出内容,就是接口返回的数据&ndash;&gt;-->
+        <!--<print/>-->
+        <!--&lt;!&ndash; 添加断言标签 分为结果断言 和 数据库断言 &ndash;&gt;-->
+        <!--<Assert>-->
+            <!--&lt;!&ndash; 结果断言 &ndash;&gt;-->
+            <!--&lt;!&ndash; 断言状态 statue&ndash;&gt;-->
+            <!--<result statue = "0">-->
+                <!--<JsonRsult>-->
+
+                    <!--{-->
+                    <!--"status":0,-->
+                    <!--"message":"设备类型不能为空"-->
+                    <!--}-->
+                <!--</JsonRsult>-->
+            <!--</result>-->
+            <!--&lt;!&ndash;执行SQL 数据库的sql&ndash;&gt;-->
+            <!--&lt;!&ndash;  <SQL database="jenkins">-->
+
+                  <!--&lt;!&ndash;执行是sql&ndash;&gt;-->
+                  <!--<exe_sql>-->
+                      <!--SELECT * from Login where username = 'zhangsan' and passwrod = '123456'-->
+                  <!--</exe_sql>-->
+
+                  <!--&lt;!&ndash;断言返回结果&ndash;&gt;-->
+                  <!--<sql_result>-->
+
+                      <!--{-->
+                          <!--"login_id":10000,-->
+                          <!--"username":"zhangsan"-->
+                      <!--}-->
+
+                  <!--</sql_result>-->
+
+              <!--</SQL>&ndash;&gt;-->
+        <!--</Assert>-->
+    <!--</case>-->
+</testcase>
